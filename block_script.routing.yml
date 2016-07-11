@@ -1,0 +1,11 @@
+
+block_script.script_config_form:
+  path: '/admin/config/block_script/scriptconfig'
+  defaults:
+    _form: '\Drupal\block_script\Form\ScriptConfigForm'
+    _title: 'ScriptConfigForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+

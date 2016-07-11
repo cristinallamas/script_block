@@ -1,0 +1,7 @@
+block_script.script_config_form:
+  title: 'ScriptConfigForm'
+  route_name: block_script.script_config_form
+  description: 'A description for the menu entry'
+  parent: system.admin_config_system
+  weight: 99
+
