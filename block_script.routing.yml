@@ -9,3 +9,11 @@ block_script.script_config_form:
   options:
     _admin_route: TRUE
 
+
+block_script.script_block_controller_hello:
+  path: '/block_script/hello/{name}'
+  defaults:
+    _controller: '\Drupal\block_script\Controller\ScriptBlockController::hello'
+    _title: 'getScriptBlockController'
+  requirements:
+    _permission: 'access content'

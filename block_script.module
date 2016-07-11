@@ -22,3 +22,52 @@ function block_script_help($route_name, RouteMatchInterface $route_match) {
     default:
   }
 }
+
+function block_script_theme($existing, $type, $theme, $path) {
+  return array(
+    'script_block' => array(
+   		'template' => 'script-block',
+   		'variables' => array('test_var' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ * @param array $suggestions
+ * @param array $variables
+ */
+// function block_script_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+//   if (isset($variables['elements']['content']['#block_content'])) {
+//     array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
+//   }
+// }
+
+// function block_script_theme(&$existing, $type, $theme, $path) {
+
+//   $hooks['script_block'] = array(
+//     'template' => 'templates/user_login',
+//     'render element' => 'form',
+//     // other theme registration code...
+//   );
+//   return $hooks;
+// }
+
+
+// In Drupal 8, this works for rendering a block plugin (that is, one that you've created in a custom module) in a preprocess_hook:
+function block_script_preprocess_block(&$variables) {
+
+	// kint($variables);
+	// dd($variables['block']);
+	// exit;
+}
+
+
+// function block_script_preprocess_script_block(array &$variables) {
+//   $customblock = \Drupal::service('plugin.manager.block')->createInstance('script_block', []);
+//   // $variables['content']['script_block_output'] = $customblock->build();
+//   $variables['content']['script_block_output'] = '2334113';
+// }
+// You can then render it in your twig template like this:
+
+// {{ content.custom_block_output }}
